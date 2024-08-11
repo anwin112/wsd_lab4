@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ev="http://xyz.com/ev"
+           targetNamespace="http://xyz.com/ev"
+           elementFormDefault="qualified">
+
+    <!-- Root element -->
+    <xs:element name="ev" type="ev:EVType"/>
+
+    <!-- Complex type for EV -->
+    <xs:complexType name="EVType">
+        <xs:sequence>
+            <xs:element name="user" type="ev:UserType"/>
+            <xs:element name="vehicle" type="ev:VehicleType"/>
+            <xs:element name="charging_station" type="ev:ChargingStationType"/>
+            <xs:element name="route" type="ev:RouteType"/>
+            <xs:element name="hotel" type="ev:HotelType"/>
+            <xs:element name="booking" type="ev:BookingType"/>
+            <xs:element name="waypoint" type="ev:WaypointType"/>
+            <xs:element name="feedback" type="ev:FeedbackType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for User -->
+    <xs:complexType name="UserType">
+        <xs:sequence>
+            <xs:element name="userid">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:length value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="user_name" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Vehicle -->
+    <xs:complexType name="VehicleType">
+        <xs:sequence>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="range" type="xs:integer"/>
+            <xs:element name="battery_capacity" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Charging Station -->
+    <xs:complexType name="ChargingStationType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="location" type="xs:string"/>
+            <xs:element name="charger_type" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Route -->
+    <xs:complexType name="RouteType">
+        <xs:sequence>
+            <xs:element name="start_location" type="xs:string"/>
+            <xs:element name="end_location" type="xs:string"/>
+            <xs:element name="distance" type="xs:decimal"/>
+            <xs:element name="time" type="xs:string"/> <!-- Consider using xs:duration for time -->
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Hotel -->
+    <xs:complexType name="HotelType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="location" type="xs:string"/>
+            <xs:element name="rating">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Booking -->
+    <xs:complexType name="BookingType">
+        <xs:sequence>
+            <xs:element name="bookingID" type="xs:string"/>
+            <xs:element name="booking_status" type="xs:string"/>
+            <xs:element name="room_type" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Waypoint -->
+    <xs:complexType name="WaypointType">
+        <xs:sequence>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="location" type="xs:string"/>
+            <xs:element name="rating" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Complex type for Feedback -->
+    <xs:complexType name="FeedbackType">
+        <xs:sequence>
+            <xs:element name="comment" type="xs:string"/>
+            <xs:element name="rating">
+                <xs:simpleType>
+                    <xs:restriction base="xs:decimal">
+                        <xs:minInclusive value="1"/>
+                        <xs:maxInclusive value="5"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="feedback_type" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

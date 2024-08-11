@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ev_trip_planner.xsl"?>
+<ev xmlns="http://xyz.com/ev"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xyz.com/ev ev_schema.xsd">
+
+   
+   
+
+    <user>
+        <userid>U1234</userid>
+        <user_name>John Doe</user_name>
+        <email>john.doe@example.com</email>
+    </user>
+    <vehicle>
+        <model>Tesla Model S</model>
+        <range>370</range> <!-- Range in miles -->
+        <battery_capacity>100</battery_capacity> <!-- Capacity in kWh -->
+    </vehicle>
+
+    <charging_station>
+        <name>FastCharge Station</name>
+        <location>123 Electric Ave, Silicon Valley, CA</location>
+        <charger_type>DC Fast Charger</charger_type>
+    </charging_station>
+
+    <route>
+        <start_location>San Francisco, CA</start_location>
+        <end_location>Los Angeles, CA</end_location>
+        <distance>380</distance> <!-- Distance in miles -->
+        <time>6h 30m</time> <!-- Time duration -->
+    </route>
+    <hotel>
+        <name>EcoStay Hotel</name>
+        <location>456 Green Blvd, Los Angeles, CA</location>
+        <rating>4.5</rating> <!-- Rating out of 5 -->
+    </hotel>
+    <booking>
+        <bookingID>B78901</bookingID>
+        <booking_status>Confirmed</booking_status>
+        <room_type>Suite</room_type>
+    </booking> 
+    <waypoint>
+        <type>Charging Station</type>
+        <location>789 Charge Rd, Paso Robles, CA</location>
+        <rating>4.0</rating> <!-- Rating out of 5 -->
+    </waypoint>
+    <feedback>
+        <comment>Great trip, but the charging station was a bit crowded.</comment>
+        <rating>4</rating> <!-- Rating out of 5 -->
+        <feedback_type>Travel Experience</feedback_type>
+    </feedback>
+</ev>

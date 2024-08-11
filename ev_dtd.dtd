@@ -1,0 +1,30 @@
+<!ELEMENT ev (user, vehicle, charging_station, route, hotel, booking, waypoint, feedback)>
+<!ELEMENT user (userid, user_name, email)>
+<!ELEMENT userid (#PCDATA)>
+<!ELEMENT user_name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT vehicle (model, range, battery_capacity)>
+<!ELEMENT model (#PCDATA)>
+<!ELEMENT range (#PCDATA)>
+<!ELEMENT battery_capacity (#PCDATA)>
+<!ELEMENT charging_station (name, location, charger_type)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+<!ELEMENT charger_type (#PCDATA)>
+<!ELEMENT route (start_location, end_location, distance, time)>
+<!ELEMENT start_location (#PCDATA)>
+<!ELEMENT end_location (#PCDATA)>
+<!ELEMENT distance (#PCDATA)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT hotel (name, location, rating)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT booking (bookingID, booking_status, room_type)>
+<!ELEMENT bookingID (#PCDATA)>
+<!ELEMENT booking_status (#PCDATA)>
+<!ELEMENT room_type (#PCDATA)>
+<!ELEMENT waypoint (type, location, rating)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT rating (#PCDATA)>
+<!ELEMENT feedback (comment, rating, feedback_type)>
+<!ELEMENT comment (#PCDATA)>
+<!ELEMENT feedback_type (#PCDATA)>
