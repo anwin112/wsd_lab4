@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href='test.xsl'?>
+<travel xmlns="http://xyz.html//travel"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xyz.html//travel http://xyz.html//travel.xsd">
+
+    <user>
+        <name>John</name>
+        <userid>1234</userid>
+    </user>
+    <vehicle>
+        <make>Toyota</make>
+        <range>200</range>
+    </vehicle>
+
+</travel>

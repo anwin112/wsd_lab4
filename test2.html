@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <style>
+        
+        footer {
+            background-color: black;
+            width: 100%;
+            padding-top: 2%;
+            padding-bottom: 2%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        footer ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            font-size: small;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ddd;
+        }
+
+        footer img {
+            padding-top: 20px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        /* Grid container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            background-color: #f0f0f0; /* light gray background */
+            padding: 20px;
+            margin: 40px auto;
+            width: 80%; /* make it responsive */
+            height: auto; /* make it responsive */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gallery container */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            padding: 20px;
+        }
+
+        /* Image container */
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+  
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="image_galary.html">Gallary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Map</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Review</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="section1">
+            <div class="grid-container">
+                <div class="gallery">
+                    <a href="" data-target="#modelId1" data-toggle="modal"><img src="hiking.jpg" alt="Image 1"></a>
+                    <a href="" data-target="#modelId2" data-toggle="modal"><img src="camping.jpg" alt="Image 2"></a>
+                    <a href="" data-target="#modelId3" data-toggle="modal"><img src="extreme_sports.jpg" alt="Image 3"></a>
+                    <a href="" data-target="#modelId4" data-toggle="modal"><img src="biking.jpg" alt="Image 4"></a>
+                    <a href="" data-target="#modelId5" data-toggle="modal"><img src="diving.jpg" alt="Image 5"></a>
+                    <a href="" data-target="#modelId6" data-toggle="modal"><img src="snow.jpg" alt="Image 6"></a>
+           
+                   
+                </div>
+            </div>
+           
+           
+            
+            <!-- Modal 1 -->
+            <div class="modal fade" id="modelId1" >
+                <div class="modal-dialog" role="document" >
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">hill climbing</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="hiking.jpg"   style="height: 400px;width: 450px;" alt="Image 1">
+                            <p>hill climbing is a more of an eunthusiuastic sport</p>
+                            review:it was soo much fun in these trips
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 2 -->
+        <div class="modal fade" id="modelId2" >
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Camping</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="camping.jpg"   style="height: 400px;width: 450px;" alt="Image 2">
+                        <p>Camping is a great way to connect with nature</p>
+                        review:it was an amazing experience
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 3 -->
+        <div class="modal fade" id="modelId3" >
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Extreme Sports</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="extreme_sports.jpg"   style="height: 400px;width: 450px;" alt="Image 3">
+                        <p>Extreme sports are a great way to get an adrenaline rush</p>
+                        review:it was an exhilarating experience
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 4 -->
+        <div class="modal fade" id="modelId4" >
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Biking</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="biking.jpg"   style="height: 400px;width: 450px;" alt="Image 4">
+                        <p>Biking is a great way to explore new places</p>
+                        review:it was a fun ride
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal 5 -->
+        <div class="modal fade" id="modelId5" >
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Diving</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="diving.jpg"   style="height: 400px;width: 450px;" alt="Image 5">
+                        <p>Diving is a great way to explore the underwater world</p>
+                        review:it was an amazing experience
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 6 -->
+        <div class="modal fade" id="modelId6" >
+            <div class="modal-dialog" role="document" >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Diving</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="diving.jpg"   style="height: 400px;width: 450px;" alt="Image 5">
+                        <p>Diving is a great way to explore the underwater world</p>
+                        review:it was an amazing experience
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="section2">
+            <div id="map" style="width: 800px; height: 600px;"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      
+      var map = L.map('map').setView([51.505, -0.09], 13);
+
+     
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+        subdomains: ['a', 'b', 'c']
+      }).addTo(map);
+
+      // Get the user's current location
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+
+        // Add a marker to the map at the user's current location
+        L.marker([lat, lon]).addTo(map);
+
+        // Zoom to the user's current location
+        map.setView([lat, lon], 15);
+      }, function(error) {
+        console.error("Error getting location:", error);
+      });
+    </script>
+        </div>
+        <div class="section3">
+
+        </div>
+
+
+        
+        <footer>
+            <ul>
+                <li><a href="">Provider</a></li>
+                <li><a href="">Settings</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Social Media</a></li>
+            </ul>
+     
+            </div>
+        </footer>
+   
+</body>
+</html>
